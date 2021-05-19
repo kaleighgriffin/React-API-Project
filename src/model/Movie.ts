@@ -6,3 +6,4 @@ export interface Movie {
     genres?: string[];
     poster_path: string;
 }
+

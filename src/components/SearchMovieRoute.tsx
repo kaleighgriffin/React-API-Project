@@ -1,7 +1,13 @@
 function SearchMovie() {
 
     return(
-        <div className="SearchMovie"></div>
+        <form className="SearchMovie" > 
+            <h2>Search for movies!</h2>
+            <label>Release Year: 
+                <input type="number" />
+            </label>
+            <button type="submit">Search</button>
+        </form>
     )
 
 }
