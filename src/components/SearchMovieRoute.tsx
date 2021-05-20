@@ -33,14 +33,14 @@ function SearchMovie() {
                     <option value="878">Science Fiction</option>
                 </select>
             </label>
-            <label>Cast Member: 
+            {/* <label>Cast Member: 
                 <select placeholder="Select Cast Member" onChange={e => setCastMember(e.target.value)}>
                     <option value="">Select Cast Member</option>
                     <option value="500">Tom Cruise</option>
                     <option value="23659">Will Farrell</option>
                     <option value="3896">Liam Neeson</option>
                 </select>
-            </label>
+            </label> */}
             <button type="submit">Search</button>
         </form>
     )

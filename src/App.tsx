@@ -4,7 +4,8 @@ import { fetchMovieInfo } from './service/MovieApiService';
 import { BrowserRouter as Router, Switch, Route, Redirect, Link, NavLink } from 'react-router-dom'
 import SearchMovieRoute from './components/SearchMovieRoute';
 import MovieResultsRoute from './components/MovieResultsRoute';
-
+import WatchlistRoute from './components/WatchlistRoute';
+import { MovieContextProvider } from './context/movie-context';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,11 @@ function App() {
           <Route path="/search-results">
             <MovieResultsRoute />
           </Route>
+          <MovieContextProvider>
+          <Route path="/watchlist">
+            <WatchlistRoute />
+          </Route>
+          </MovieContextProvider>
         </Switch>
       </Router>
     </div>
