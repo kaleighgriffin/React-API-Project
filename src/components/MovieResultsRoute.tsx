@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Movie } from "../model/Movie";
 import { fetchMovieInfo } from "../service/MovieApiService";
 import MovieDetails from "./MovieDetails";
 
-interface Props {
-    year: number
-}
 
-function MovieResults({year}: Props) {
-    const [ movieYear, setMovieYear ] = useState<Movie[]>([]);
+function MovieResults() {
+    const [ moviesCriteria, setMoviesCriteria ] = useState<Movie[]>([]);
+    const query = new URLSearchParams(useLocation().search)
+    const year = parseInt(query.get('year')??'');
+    const genre = query.get('genre')??'';
+    const castMember = query.get('castMember')??'';
 
     useEffect(() => {
-        fetchMovieInfo(year).then(data => {
-            setMovieYear(data)
+        fetchMovieInfo(year, genre, castMember).then(data => {
+            setMoviesCriteria(data)
         })
-    }, [movieYear])
+    }, [year, genre, castMember])
 
     return(
         <div className="MovieResults">
-           {movieYear.map((movie, index) =>
+           {moviesCriteria.map((movie, index) =>
            <MovieDetails key={index} movie={movie}/>
             )}
         </div>

@@ -18,10 +18,10 @@ function App() {
         </header>
         <Switch>
           <Route path="/search-movie">
-            <SearchMovieRoute onSubmit={handleSubmit}/>
+            <SearchMovieRoute />
           </Route>
           <Route path="/search-results">
-            <MovieResultsRoute year={year}/>
+            <MovieResultsRoute />
           </Route>
         </Switch>
       </Router>

@@ -2,9 +2,9 @@ import { Movie } from '../model/Movie';
 
 const mdbCredentials: string = process.env.REACT_APP_MOVIE_API_KEY || "";
 
-export function fetchMovieInfo(year: number): Promise<Movie[]> {
+export function fetchMovieInfo(year: number, genre: string, castMember: string): Promise<Movie[]> {
 
-    return fetch(`https://api.themoviedb.org/3/discover/movie?primary_release_year=${year}&api_key=${mdbCredentials}`)
+    return fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&with_cast=${castMember}&primary_release_year=${year}&api_key=${mdbCredentials}`)
     .then(res => res.json())
     .then((data) => {
         console.log(data);
@@ -14,3 +14,7 @@ export function fetchMovieInfo(year: number): Promise<Movie[]> {
 }
 
 
+// https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&with_cast=${castMember}&primary_release_year=${year}&api_key=${mdbCredentials}
+
+
+ 
