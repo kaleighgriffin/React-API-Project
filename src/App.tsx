@@ -3,7 +3,6 @@ import './App.css';
 import { fetchMovieInfo } from './service/MovieApiService';
 import { BrowserRouter as Router, Switch, Route, Redirect, Link, NavLink } from 'react-router-dom'
 import SearchMovieRoute from './components/SearchMovieRoute';
-import MovieResults from './components/MovieResultsRoute';
 import MovieResultsRoute from './components/MovieResultsRoute';
 
 function App() {
@@ -19,10 +18,10 @@ function App() {
         </header>
         <Switch>
           <Route path="/search-movie">
-            <SearchMovieRoute />
+            <SearchMovieRoute onSubmit={handleSubmit}/>
           </Route>
           <Route path="/search-results">
-            <MovieResultsRoute year={1990}/>
+            <MovieResultsRoute year={year}/>
           </Route>
         </Switch>
       </Router>

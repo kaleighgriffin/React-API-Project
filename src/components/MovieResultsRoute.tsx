@@ -14,7 +14,7 @@ function MovieResults({year}: Props) {
         fetchMovieInfo(year).then(data => {
             setMovieYear(data)
         })
-    }, [])
+    }, [movieYear])
 
     return(
         <div className="MovieResults">
