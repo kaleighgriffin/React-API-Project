@@ -6,8 +6,9 @@ export function fetchMovieInfo(year: number): Promise<Movie[]> {
 
     return fetch(`https://api.themoviedb.org/3/discover/movie?primary_release_year=${year}&api_key=${mdbCredentials}`)
     .then(res => res.json())
-    .then((data: Movie[]) => {
-        return data;
+    .then((data) => {
+        console.log(data);
+        return data.results;
     });
 
 }
