@@ -12,8 +12,9 @@ function SearchMovie() {
     function handleSubmit(e:FormEvent) {
         e.preventDefault();
   
-        history.push(`/search-results?year=${year}&genre=${genre}&vote-average=${voteAverage}`) 
+        history.push(`/search-results?year=${year}&genre=${genre}&sort_by=vote_average.${voteAverage}`) 
         // history.push(`/search-results?year=${year}`) 
+        console.log(voteAverage);
     }
     
     return(
@@ -33,12 +34,19 @@ function SearchMovie() {
                     <option value="878">Science Fiction</option>
                 </select>
             </label>
-            <label>Sort by Highest Vote Average: 
-                <input name="sortBy" type="radio" value="&sort_by=vote_average.desc" onChange={e => setVoteAverage(e.target.value)} />
+            <label>Sort by:
+                <select placeholder="Select One" onChange={e => setVoteAverage(e.target.value)}>
+                    <option value="">Select One</option>
+                    <option value="desc">Highest Vote Average</option>
+                    <option value="asc">Lowest Vote Average</option>
+                </select>
+            </label>
+            {/* <label>Sort by Highest Vote Average: 
+                <input name="sortBy" type="radio" value="desc" onChange={e => setVoteAverage(e.target.value)} />
             </label>
             <label>Sort by Lowest Vote Average: 
-                <input name="sortBy" type="radio" value="&sort_by=vote_average.asc" onChange={e => setVoteAverage(e.target.value)} />
-            </label>
+                <input name="sortBy" type="radio" value="asc" onChange={e => setVoteAverage(e.target.value)} />
+            </label> */}
             <button type="submit">Search</button>
         </form>
     )

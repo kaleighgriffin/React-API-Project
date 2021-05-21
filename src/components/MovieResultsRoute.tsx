@@ -14,10 +14,11 @@ function MovieResults() {
 
     useEffect(() => {
         fetchMovieInfo(year, genre, voteAverage).then(data => {
-            setMoviesCriteria(data)
+            setMoviesCriteria(data);
         })
     }, [year, genre, voteAverage])
 
+    console.log(document.URL)
     return(
         <div className="MovieResults">
            {moviesCriteria.map((movie, index) =>
