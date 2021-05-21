@@ -10,13 +10,13 @@ function MovieResults() {
     const query = new URLSearchParams(useLocation().search)
     const year = parseInt(query.get('year')??'');
     const genre = query.get('genre')??'';
-    const castMember = query.get('castMember')??'';
+    const voteAverage = query.get('voteAverage')??'';
 
     useEffect(() => {
-        fetchMovieInfo(year, genre, castMember).then(data => {
+        fetchMovieInfo(year, genre, voteAverage).then(data => {
             setMoviesCriteria(data)
         })
-    }, [year, genre, castMember])
+    }, [year, genre, voteAverage])
 
     return(
         <div className="MovieResults">

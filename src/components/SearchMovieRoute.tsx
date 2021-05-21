@@ -6,13 +6,13 @@ import { Movie } from "../model/Movie";
 function SearchMovie() {
     const [ year, setYear ] = useState("");
     const [ genre, setGenre ] = useState("");
-    const [ castMember, setCastMember ] = useState("");
+    const [ voteAverage, setVoteAverage ] = useState("");
     const history = useHistory();
 
     function handleSubmit(e:FormEvent) {
         e.preventDefault();
   
-        history.push(`/search-results?year=${year}&genre=${genre}&cast-member=${castMember}`) 
+        history.push(`/search-results?year=${year}&genre=${genre}&vote-average=${voteAverage}`) 
         // history.push(`/search-results?year=${year}`) 
     }
     
@@ -33,14 +33,12 @@ function SearchMovie() {
                     <option value="878">Science Fiction</option>
                 </select>
             </label>
-            {/* <label>Cast Member: 
-                <select placeholder="Select Cast Member" onChange={e => setCastMember(e.target.value)}>
-                    <option value="">Select Cast Member</option>
-                    <option value="500">Tom Cruise</option>
-                    <option value="23659">Will Farrell</option>
-                    <option value="3896">Liam Neeson</option>
-                </select>
-            </label> */}
+            <label>Sort by Highest Vote Average: 
+                <input name="sortBy" type="radio" value="&sort_by=vote_average.desc" onChange={e => setVoteAverage(e.target.value)} />
+            </label>
+            <label>Sort by Lowest Vote Average: 
+                <input name="sortBy" type="radio" value="&sort_by=vote_average.asc" onChange={e => setVoteAverage(e.target.value)} />
+            </label>
             <button type="submit">Search</button>
         </form>
     )

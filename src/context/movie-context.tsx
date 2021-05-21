@@ -16,10 +16,11 @@ export const MovieContext = createContext(defaultValue);
 export function MovieContextProvider({children}: { children: ReactNode }) {
     const [ movies, setMovies ] = useState<Movie[]>([]);
 
-    function addMovie(movies: Movie): number {
-        setMovies(movies => [...movies, watchlistMovie]);
+    function addMovie(watchlistMovie: Movie): number {
+        setMovies([...movies, watchlistMovie]);
         return movies.length;
     }
+    
     return (
         <MovieContext.Provider value={{movies, addMovie}}>
             {children}
