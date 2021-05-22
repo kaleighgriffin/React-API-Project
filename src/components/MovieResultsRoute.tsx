@@ -8,16 +8,26 @@ import './MovieResultsRoute.css'
 
 function MovieResults() {
     const [ moviesCriteria, setMoviesCriteria ] = useState<Movie[]>([]);
+    const [ page, setPage ] = useState(1);
     const query = new URLSearchParams(useLocation().search)
     const year = parseInt(query.get('year')??'');
     const genre = query.get('genre')??'';
+    const pageNum = parseInt(query.get('page')??'');
     const voteAverage = query.get('voteAverage')??'';
 
+    function pageUp() {
+        setPage(page + 1);
+    }
+
+    function pageDown() {
+        setPage(page - 1);
+    }
+
     useEffect(() => {
-        fetchMovieInfo(year, genre, voteAverage).then(data => {
+        fetchMovieInfo(year, genre, voteAverage, pageNum).then(data => {
             setMoviesCriteria(data);
         })
-    }, [year, genre, voteAverage])
+    }, [year, genre, voteAverage, pageNum])
 
     console.log(document.URL)
     return(
@@ -26,6 +36,8 @@ function MovieResults() {
            {moviesCriteria.map((movie, index) =>
            <MovieDetails key={index} movie={movie}/>
             )}
+            <button type="button" onClick={pageUp}>Next Page</button>
+            <button type="button" onClick={pageDown}>Previous Page</button>
         </div>
     );
 
