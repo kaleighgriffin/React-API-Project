@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import { useHistory } from "react-router";
 import { Movie } from "../model/Movie";
+import './SearchMovieRoute.css';
 
 
 function SearchMovie() {

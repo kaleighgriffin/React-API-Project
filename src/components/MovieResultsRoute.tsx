@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Movie } from "../model/Movie";
 import { fetchMovieInfo } from "../service/MovieApiService";
 import MovieDetails from "./MovieDetails";
+import './MovieResultsRoute.css'
 
 
 function MovieResults() {
@@ -21,6 +22,7 @@ function MovieResults() {
     console.log(document.URL)
     return(
         <div className="MovieResults">
+            <p className="instructions">Click the star to add a movie to your personalized watchlist!</p>
            {moviesCriteria.map((movie, index) =>
            <MovieDetails key={index} movie={movie}/>
             )}
