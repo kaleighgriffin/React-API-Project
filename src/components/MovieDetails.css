@@ -17,17 +17,15 @@ h3 {
     font-size: 12px;
     margin: 0px auto;
     /* background-color: rgb(197, 195, 191); */
-    padding: 5px;
     background-image: url('../components/reel-image.png');
     background-size: cover;
     width: 400px;
-    padding: 50px 100px;
-    padding-bottom: 30px;
+    padding: 40px 100px 30px 100px;
 }
 
 .allCaps {
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -36,11 +34,29 @@ p {
 }
 
 #star {
-    font-size: 20px;
+    font-size: 30px;
     color: goldenrod;
-    margin-bottom: 10px; 
+    margin: 0px;
+    float: right;
+    z-index: 1;
+    position: absolute;
 }
 
 #star:hover {
     color: rgb(230, 207, 150);
+}
+
+.MovieDetails img {
+    width: 150px;
+}
+
+.MovieInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
 }

@@ -28,15 +28,18 @@ function MovieDetails({ movie }: Props) {
     return(
         <div className="MovieDetails">
             <div>
+            <i className="fas fa-star" id="star" onClick={handleAddMovie}></i><br></br>
             <h3>{movie.title}</h3>
             </div>
-            {/* <p className="allCaps">{movie.genres}</p> */}
-            <p className="allCaps">RELEASE DATE:{" "}{movie.release_date}</p>
-            <p className="allCaps">VOTE AVERAGE:{" "}{movie.vote_average.toFixed(1)}/10</p>
-            <i className="fas fa-star" id="star" onClick={handleAddMovie}></i>
-            {/* <button onClick={handleAddMovie}>Add to Watchlist</button> */}
+            <div className="MovieInfo">
+                { movie.poster_path && <img src={"https://image.tmdb.org/t/p/w500"+movie.poster_path} alt="" /> }
+                <div className="Column">
+                    <p className="allCaps">RELEASE DATE:{" "}{movie.release_date}</p>
+                    <p className="allCaps">VOTE AVERAGE:{" "}{movie.vote_average.toFixed(1)}/10</p>
+                </div>
+            </div>
             <p>{movie.overview}</p>
-            { movie.poster_path && <img src={movie.poster_path} alt="" /> }
+            
         </div>
     )
 
