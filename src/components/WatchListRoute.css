@@ -1,0 +1,31 @@
+
+.WatchList {
+    height: 100px;
+}
+
+.infoContainer {
+   position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   z-index: 1; 
+}
+
+.movieInfo {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    opacity: 90%;
+    width: 300px;
+    margin: 0 auto;
+}
+
+img {
+    width: 150px;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+}
