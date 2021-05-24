@@ -5,5 +5,6 @@ export interface Movie {
     overview?: string;
     genres?: string[];
     poster_path?: string|null;
+    tagline?: string;
 }
 

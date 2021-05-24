@@ -13,7 +13,7 @@ function SearchMovie() {
     function handleSubmit(e:FormEvent) {
         e.preventDefault();
   
-        history.push(`/search-results?year=${year}&genre=${genre}&sort_by=vote_average.${voteAverage}`) 
+        history.push(`/search-results?year=${year}&genre=${genre}&voteAverage=${voteAverage}`) 
         // history.push(`/search-results?year=${year}`) 
         console.log(voteAverage);
     }
@@ -37,7 +37,7 @@ function SearchMovie() {
                     </select>
                 </label><br></br>
                 <label>Sort by:
-                    <select placeholder="Select One" onChange={e => setVoteAverage(e.target.value)}>
+                    <select placeholder="Select One" value={voteAverage} onChange={e => setVoteAverage(e.target.value)}>
                         <option value="">Select One</option>
                         <option value="desc">Highest Vote Average</option>
                         <option value="asc">Lowest Vote Average</option>

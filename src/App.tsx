@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <MovieContextProvider>
         <header>
           <h1>GC MOVIE DATABASE</h1>
           <nav>
@@ -25,12 +26,11 @@ function App() {
           <Route path="/search-results">
             <MovieResultsRoute />
           </Route>
-          <MovieContextProvider>
           <Route path="/watchlist">
             <WatchlistRoute />
           </Route>
-          </MovieContextProvider>
         </Switch>
+        </MovieContextProvider>
       </Router>
     </div>
   );
