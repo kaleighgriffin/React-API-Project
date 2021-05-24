@@ -1,9 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url(//db.onlinewebfonts.com/c/19007e0c85468fd509414342e0ca9c68?family=Broadway);
 
 h1 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Broadway";
+    border: 6px dotted white;
+    border-radius: 10px;
+    text-align: center;
+    width: 480px;
+    padding: 5px;
+    margin: 10px auto;
+    background-color: rgb(66, 17, 17);
+    box-shadow: 0 0 12px white;
+    text-shadow: 0 0 10px white;
+    font-size: 40px;
+}
+
+nav {
+    text-align: center;
 }
 
 .navLinks {
     font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navLinks:hover {
+    text-shadow: 0 0 10px white;
 }

@@ -1,5 +1,12 @@
 .instructions {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     font-style: italic;
     font-size: 12px;
+    text-align: center;
+    margin: 10px
+}
+
+.buttonDiv {
+    text-align: center;
+    margin: 15px;
 }

@@ -18,7 +18,6 @@ function MovieDetails({ movie }: Props) {
             release_date: movie.release_date,
             vote_average: movie.vote_average,
             overview: movie.overview,
-            // genres: movie.genres,
             poster_path: movie.poster_path
         }
         addMovie(listMovie);
@@ -39,7 +38,6 @@ function MovieDetails({ movie }: Props) {
                 </div>
             </div>
             <p>{movie.overview}</p>
-            
         </div>
     )
 

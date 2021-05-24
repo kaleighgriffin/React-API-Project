@@ -12,7 +12,7 @@ function MovieResults() {
     const query = new URLSearchParams(useLocation().search)
     const year = parseInt(query.get('year')??'');
     const genre = query.get('genre')??'';
-    const pageNum = parseInt(query.get('page')??'');
+    // const pageNum = parseInt(query.get('page')??'');
     const voteAverage = query.get('voteAverage')??'';
 
     function pageUp() {
@@ -24,10 +24,10 @@ function MovieResults() {
     }
 
     useEffect(() => {
-        fetchMovieInfo(year, genre, voteAverage, pageNum).then(data => {
+        fetchMovieInfo(year, genre, voteAverage).then(data => {
             setMoviesCriteria(data);
         })
-    }, [year, genre, voteAverage, pageNum])
+    }, [year, genre, voteAverage])
 
     console.log(document.URL)
     return(
@@ -36,8 +36,10 @@ function MovieResults() {
            {moviesCriteria.map((movie, index) =>
            <MovieDetails key={index} movie={movie}/>
             )}
-            <button type="button" onClick={pageUp}>Next Page</button>
-            <button type="button" onClick={pageDown}>Previous Page</button>
+            <div className="buttonDiv">
+                <button type="button" onClick={pageDown}>Previous Page</button>
+                <button type="button" onClick={pageUp}>Next Page</button>
+            </div>
         </div>
     );
 

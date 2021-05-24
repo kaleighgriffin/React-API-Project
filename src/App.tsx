@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <Router>
         <header>
-          <h1>MOVIES</h1>
+          <h1>GC MOVIE DATABASE</h1>
           <nav>
-            <NavLink to="/search-movie" className="navLinks">Search for Movie</NavLink>{" "}
+            <NavLink to="/search-movie" className="navLinks">Search for Movie</NavLink>{" | "}
             <NavLink to="/watchlist" className="navLinks">Watchlist</NavLink>
           </nav>
         </header>
